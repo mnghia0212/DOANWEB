@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="Chuyentrang.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src="fahaha.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+    <title>FAHAHA STATIONERY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+</head>
+
+<body>
+      <div class="sidebar">
+          <p style="font-family: 'Tilt Warp', cursive; font-size: 25px; position: relative; bottom: 15px;">Home</p>
+      </div>
+            <div>
+                  <nav>                     
+                        <ul>
+                              <h3>CORE</h3>                            
+                              <li><a href="#Home" onclick="ShowNewDiv('Home')" >Trang chủ</a></li>
+                                
+                                   
+                              <h3>Nhập - xuất</h3>
+                                  <ul>
+                                    <li>
+                                        <a href="#PN" onclick="ShowNewDiv('PN')">Phiếu nhập 
+                                           <!-- <i class="fas fa-angle-right first"></i> -->
+                                        </a>
+                                    </li>
+                                        <!-- <ul class="pn-show">
+                                            <li><a href="#">Lập phiếu nhập</a></li>
+                                            <li><a href="#">Chi tiết nhập</a></li>
+                                            <li><a href="#">Số lượng nhập</a></li>
+                                            <li><a href="#">Hàng đã nhập</a></li>
+                                        </ul> -->
+                                  </ul>
+                                  <ul>
+                                      <li><a href="#PX" onclick="ShowNewDiv('PX')">Phiếu xuất
+                                        <!-- <i class="fas fa-angle-right second"></i> -->
+                                      </a>
+                                    </li>
+                                          <!-- <ul class="px-show">
+                                              <li><a href="#">Lập phiếu nhập</a></a></li>
+                                              <li><a href="#">Chi tiết nhập</a></li>
+                                              <li><a href="#">Số lượng nhập</a></li>
+                                              <li><a href="#">Hàng đã nhập</a></li>
+                                          </ul> -->
+                                  </ul>                                                                                                                                                                                                                    
+                              <h3>Thu - chi</h3>
+                                  <ul>
+                                      <li><a href="#PTC" onclick="ShowNewDiv('PTC')" >Phiếu thu - chi</a></li>
+                                  </ul>
+                                    
+                              <h3>Báo cáo</h3>
+                                    <ul>
+                                        <li><a href="#" class="tc-btn">Thu - chi
+                                            <i class="fas fa-angle-right third"></i>
+                                            </a>
+                                        </li>
+                                            <ul class="tc-show">
+                                                <li><a href="#BCT" onclick="ShowNewDiv('BCT')">Báo cáo thu</a></li>
+                                                <li><a href="#BCC" onclick="ShowNewDiv('BCC')">Báo cáo chi</a></li>
+                                            </ul>   
+                                        <li><a href="#" class="th-btn">Tổng hợp
+                                            <i class="fas fa-angle-right fourth"></i>
+                                            </a>    
+                                        </li>       
+                                            <ul class="th-show">
+                                                <li><a href="#TK" onclick="ShowNewDiv('TK')">Tồn kho</a></li>
+                                                <li><a href="#LN" onclick="ShowNewDiv('LN')">Lợi nhuận</a></li>
+                                                <li><a href="#CN" onclick="ShowNewDiv('CN')">Công nợ</a></li>
+                                            </ul>                            
+                                    </ul>                                   
+                        </ul>
+                              <button class="btnlogout"><b>Đăng xuất</b></button>                 
+                  </nav>
+            </div> 
+           
+                  
+            
+        <body>
+              <div id="Home" class="Trangchu" style="position: relative; left: 850px;">
+                <div><p>
+                    <h1 style="position: relative;;right: 620px; bottom: 150px;">Báo cáo ngày</h1> <br>
+                    <div style="position: relative; bottom: 200px; right: 580px; background-color: rgb(231, 224, 224,0.5); width: 1130px;" id="current-date"></div>
+                    
+                    <div class="Tonghopbanhang">
+                      <div class="Tongtienbanhang">
+                          <p style="position: relative; top: 10px;">Tổng tiền bán hàng</p> 
+                      <button class="btnTongtienbanhang">0</button>
+          
+                      </div>
+                      <div class="Sodondathuchien">
+                        <p style="position: relative; top: 10px;">Số đơn đã thực hiện</p> 
+                    <button class="btnSodondathuchien">0</button>
+          
+                    </div>
+                    <div class="Tongtiennhaphang">
+                      <p style="position: relative; top: 10px;">Tổng tiền nhập hàng</p> 
+                  <button class="btnTongtiennhaphang">0</button>
+          
+                  </div>
+                  <div class="Tongchi">
+                    <p style="position: relative; top: 10px;">Tổng chi</p> 
+                <button class="btnTongchi">0</button>
+          
+                </div>
+                <div >  
+                  <table class="Loinhuantheothang" border="1" style="text-align: left;">
+                    <tr style="width: 700; background-color: rgb(160, 163, 165);">
+                      <th><i class="fa-solid fa-calendar-days"></i>Lợi nhuận theo tháng</th>
+          
+                    </tr>
+                   <tr>
+                    <td style="border : 1px white">
+                    <form class="formtimkiemnam">
+                      <label  for="search">&nbsp;&nbsp;&nbsp; </label>
+                      <input class="formsearch"  type="text" id="search" name="serchinh" placeholder="&nbsp; &nbsp; Nhập năm cần xem " required><i class="fa-sharp fa-solid fa-magnifying-glass" style="float: right; position: relative; right: 190px; top: 10px;"></i>
+                    </form> <br>
+                    <center>
+                    <table class="tableloinhuantheothang" border="1">
+                      <thead>
+                        <tr>
+                          <th>Tháng</th>
+                          <th>Tổng tiền xuất</th>
+                          <th>Tổng tiền vốn</th>
+                          <th>Tổng khuyến mãi</th>
+                          <th>Lợi nhuận</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td style="text-align: center;">Tháng 1</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 2</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 3</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 4</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 5</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 6</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 7</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ </td>
+                          <td style="text-align: right;">0 đ </td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 8</td>
+                          <td style="text-align: right;">0  đ</td>
+                          <td style="text-align: right;">0  đ</td>
+                          <td style="text-align: right;">0  đ</td>
+                          <td style="text-align: right;">0  đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 9</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 10</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 11</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: center;">Tháng 12</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                          <td style="text-align: right;">0 đ</td>
+                        </tr>
+                        <!-- Các dòng tiếp theo tương tự -->
+                      </tbody>
+                    </table>
+                    </center>
+          
+          
+                    </td>
+                   </tr>
+                  </table>
+                  
+                </div>
+          
+              </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
+             
+              <div class="QlyCacMuc">  
+                <div id="PN" class="PhieuNhap" style="display: none;">
+                    <div class="pn-all">
+                        <div class="pn-tieude">
+                            <h4>PHIẾU NHẬP HÀNG HÓA</h4>
+                        </div>
+
+                        <div class="pn-content">
+                            <div class="pn-left">
+                                <div class="pn-form1">
+                                    <input class="pn-txt-nhapma" type="text" placeholder="Nhâp mã/tên hàng hóa">
+                                </div>
+
+                                <div class="table">
+                                    <table class="pn-table" border="1">
+                                        <tr>
+                                            <td class="pn-table-tittle">stt</td>
+                                            <td class="pn-table-tittle">hàng hóa</td>
+                                            <td class="pn-table-tittle">sl</td>
+                                            <td class="pn-table-tittle">đơn giá</td>
+                                            <td class="pn-table-tittle">thành tiền</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>bìa sơ mi</td>
+                                            <td>(-) 1 (+)</td>
+                                            <td><input type="text" value="20.000"></td>
+                                            <td>20.0000</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2</td>
+                                            <td>bút bi xanh</td>
+                                            <td>(-) 2 (+)</td>
+                                            <td><input type="text" value="8.000"></td>
+                                            <td>8.0000</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>3</td>
+                                            <td>gôm</td>
+                                            <td>(-) 3 (+)</td>
+                                            <td><input type="text" value="15.000"></td>
+                                            <td>15.000</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div>
+                                    <h1 class="pn-tongtienhang">TỔNG TIỀN HÀNG = 43.000</h1>
+                                </div>
+
+                                <div>
+                                    <button class="pn-btn-capnhat">CẬP NHẬT SỐ LIỆU</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+
+                <div id="PX" class="PhieuXuat" style="display: none;">
+                  <p>
+                      <div class="tablePX" >
+                        <table class="tablePhieuxuat" border="1" style="text-align: left;">
+                          <tr style="width: 1400px; background-color: rgb(6, 143, 201);">
+                            <th style="color:aliceblue ; "><p style="position: relative;top: 10px; font-family: 'Roboto', sans-serif ;">&nbsp;PHIẾU XUẤT 
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></th>
+                          </tr>
+                         <tr>
+                          <td style="border : 1px white">
+                         
+                          
+                          
+                              <div>
+                                <p style="position: relative; top: 15px; left: 20px ;font-family: 'Roboto', sans-serif;font-size: 15px;">Ngày xuất</p>
+                              <form action="send">
+                                 <label for="send"></label>
+                                 <input class="forminputPX" type="date" id="myTime" name="myTime">
+                              </form>
+                              <button style="position: relative; bottom: 30px;left: 380px;"> Sửa</button>
+            
+                              <p style="position: relative; top: 15px; left: 20px ;font-family: 'Roboto', sans-serif;font-size: 15px;">Tiền ship thu khách</p>
+                              <form action="send">
+                                <label for="send"></label>
+                                <input class="forminputPX" type="text" id="myTime" name="myTime">
+                             </form>
+                             <button style="position: relative; bottom: 30px;left: 380px;"> Sửa</button>
+                              <p style="position: relative; top: 22px; left: 20px ;font-family: 'Roboto', sans-serif;font-size: 15px;">Tiền KM đơn hàng</p>
+                              <form action="send">
+                                <label for="send"></label>
+                                <input class="forminputPX" type="text" id="myTime" name="myTime">
+                             </form>
+                             <button style="position: relative; bottom: 30px;left: 380px;"> Sửa</button>
+                              <p style="position: relative; top: 15px; left: 20px ;font-family: 'Roboto', sans-serif;font-size: 15px;">Ghi chú</p>
+                              <form action="send">
+                                <label for="send"></label>
+                                <input class="forminputPX" type="text" id="myTime" name="myTime">
+                             </form>
+                             <button style="position: relative; bottom: 30px;left: 380px;"> Sửa</button>
+                              <p style="position: relative; top: 15px; left: 20px ;font-family: 'Roboto', sans-serif;font-size: 15px;">Số phiếu</p> 
+                              <p style="position: relative; top: 15px; left: 20px ;font-family: 'Roboto', sans-serif;font-size: 15px;">Khách hàng</p>
+                            </div>
+                            
+                              <table class="tablecapnhap" border="1" style="border-collapse: collapse;">
+                                <thead>
+                                  <tr>
+                                    <th style="font-family: 'Roboto', sans-serif;">Hàng hóa</th>
+                                    <th style="font-family: 'Roboto', sans-serif;">Số lượng</th>
+                                    <th style="font-family: 'Roboto', sans-serif;">Đơn giá</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Bút bi</td>
+                                    <td>10</td>
+                                    <td>5.000 đồng</td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Sách vở</td>
+                                    <td>5</td>
+                                    <td>20.000 đồng</td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                             </tr>
+                             </tbody>
+                             </table>
+                             <button style="position: relative; bottom: 490px; left: 500px;width: 100px; height: 30px;background-color: rgb(6, 143, 201);color: aliceblue; border: solid rgb(6, 143, 201);">Đã sửa xong</button>
+                             <button style="position: relative; bottom: 490px; left: 500px;width: 80px; height: 30px;border:solid rgb(6, 143, 201);color: rgb(6, 143, 201);background-color: white;">Thêm</button>
+                          
+                
+                
+                          </td>
+                         </tr>
+                        </table>
+                        
+                      </div>
+                    </p>
+
+              </div>
+                
+              <div id="PTC" class="PhieuThuChi" style="display: none;" >  
+                <p>
+                  <div class="tablePTC" >
+                    <table class="tablePhieuChi" border="1" style="text-align: justify; height: 300px; border-collapse: collapse; position: relative; ;bottom: 40px;">
+                      <tr style="width: 1400px; background-color: rgb(68, 68, 68);">
+                        <th style="color:aliceblue ; "><p style="position: relative;top: 0px; font-family: 'Roboto', sans-serif ; font-size: 20px;height: 0px;">&nbsp;PHIẾU THU 
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></th>
+                      </tr>
+                     <tr>
+                      <td>
+                        <div style="position: relative; bottom: 30px; left: 30px;">
+                        <p style="font-size: 20px;">Nhập tên khách hàng</p>
+                        <form action="nhaptenKH">
+                          <label for="nhaptenKH"></label>
+                        <input type="text" style="position: relative; bottom: 20px;width: 200px;">
+                      </form>
+                      </div>
+
+                     <table border="1" style="border-collapse: collapse; font-size: 15px;width: 500px;position: relative;left: 30px; top: 0px;bottom: 100px;">
+                      <thead>
+                      <tr>
+                       
+                        
+                          <td><b>Tên khách hàng</b></td>
+                          <td><b>Mobile</b></td>
+                          <td><b>Địa chỉ</b></td>
+                        
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Khách hàng 1</td>
+                        <td>123456789</td>
+                        <td>280 An Dương Vương Q5</td>
+
+                      </tr>
+                      <tr>
+                        <td>Khách hàng 1</td>
+                        <td>123456789</td>
+                        <td>280 An Dương Vương Q5</td>
+
+                      </tr>
+                      <tr>
+                        <td>Khách hàng 1</td>
+                        <td>123456789</td>
+                        <td>280 An Dương Vương Q5</td>
+
+                      </tr>
+                    </tbody>
+                     </table>
+                    </td>
+                     </tr>
+
+                    </table>
+                    
+                  </div>
+
+                  <div>
+                    <div class="tablePTC" >
+                      <table class="tablePhieuThu" border="1" style="text-align: justify; height: 300px; border-collapse: collapse; position: relative;bottom: 620px;">
+                        <tr style="width: 1400px; background-color: rgb(255, 245, 245);">
+                          <th style="color:rgb(18, 19, 20) ; "><p style="position: relative;top: 0px; font-family: 'Roboto', sans-serif ; font-size: 20px;height: 0px;">&nbsp;BẢNG THU 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></th>
+                        </tr>
+                       <tr>
+                        <td>
+                          <div style="position: relative; bottom: 30px; left: 30px;">
+                         
+                          <form action="showentries" style="font-size: 15px; position: relative; bottom: 20px;"></form>
+                          <label for="showentries" style="font-size: 15px;">Show entries</label>
+                          <input type="number" style="position: relative; bottom: 0px;width: 30px;font-size: 15px;"></input>
+                          <form class="formtimkiemnam" style="position: relative;left: 820px;bottom: 50px;">
+                            <label  for="search" style="font-size: 15px;">Search  </label>
+                            <input class="formsearch2"  type="text" id="search" name="serchinh"  >
+                          </form>
+                          
+                        </div>  
+
+                       <table border="1" style="border-collapse: collapse; font-size: 15px;width: 1050px;position: relative;left: 30px; top: 0px;bottom: 100px;">
+                        <thead>
+                        <tr>
+                         
+                          <td></td>
+                            <td><b>Ngày thu</b></td>
+                            <td><b>Khách hàng</b></td>
+                            <td><b>Nội dung</b></td>
+                            <td><b>Tiền thu</b></td>
+                            <td><b>Phân loại</b></td>
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><button style="text-align: center;background-color: rgb(22, 154, 15); color: aliceblue;position: relative;left: 25px;">In phiếu</button></td>
+                          <td>2020-12-31</td>
+                          <td>Khách hàng 1</td>
+                          <td>Khách hàng chuyển khoảng ngân hàng ACB</td>
+                          <td>3.000.000</td>
+                          <td>Phiếu thu</td>
+
+                        </tr>
+                        <tr>
+                          <td><button style="text-align: center;background-color: rgb(22, 154, 15); color: aliceblue;position: relative;left: 25px;">In phiếu</button></td>
+                          <td>2020-05-15</td>
+                          <td>Khách hàng 2</td>
+                          <td>Khách hàng chuyển khoảng ngân hàng ACB</td>
+                          <td>3.000.000</td>
+                          <td>Phiếu thu</td>
+
+                        </tr>
+                      </tbody>
+                       </table>
+                      </td>
+                       </tr>
+
+                      </table>
+                      
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
+
+                <div id="BCT" class="BaoCaoThu" style="display: none;" >
+                  <div class="bct-all">
+                      <div class="bct-tieude">  
+                          <h4>BÁO CÁO THU</h4>
+                      </div>
+
+                      <div class="bct-content">      
+                          <div class="bct-form1">
+                              <form>
+                                  <input type="date" class="bct-timepicker1">
+                                  <input type="date" class="bct-timepicker2">
+                                  <button class="bct-btn-timkiem">Tìm kiếm</button>                    
+                              </form>
+                          </div>
+
+                         <div class="bct-form2">
+                              <form>
+                                  <span class="bct-span-ketqua">
+                                    <label>Hiện</label>
+                                    <input type="number" class="bct-resultshower">
+                                    <label>kết quả</label>
+                                  </span>
+                                  
+                                  <span class="bct-span-timkiem">
+                                    <label>Tìm kiếm</label>
+                                    <input type="text" class="bct-txt-timkiem" >   
+                                  </span>                                 
+                              </form>
+                         </div>
+
+                          <div class="table"> 
+                              <table border="1" class="bct-table">
+                                  <tr>
+                                      <td class="bct-table-tittle">Ngày</td>
+                                      <td class="bct-table-tittle">Phân loại</td>
+                                      <td class="bct-table-tittle">Khách hàng</td>
+                                      <td class="bct-table-tittle">Nội dung</td>
+                                      <td class="bct-table-tittle">Tiền thu</td>
+                                      <td class="bct-table-tittle">Thêm</td>
+                                      <td class="bct-table-tittle">Tác vụ</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>Ngày1</td>
+                                      <td>Phân loại1</td>
+                                      <td>Khách hàng1</td>
+                                      <td>Nội dung1</td>
+                                      <td>Tiền thu1</td>
+                                      <td>Thêm1</td>
+                                      <td>
+                                        <button class="bct-btn-xoa">Xóa</button>
+                                        <button class="bct-btn-sua">Sửa</button>
+                                      </td>
+                                      
+                                  </tr>
+
+                                  <tr>
+                                      <td>Ngày1</td>
+                                      <td>Phân loại1</td>
+                                      <td>Khách hàng1</td>
+                                      <td>Nội dung1</td>
+                                      <td>Tiền thu1</td>
+                                      <td>Thêm1</td>
+                                      <td>
+                                        <button class="bct-btn-xoa">Xóa</button>
+                                        <button class="bct-btn-sua">Sửa</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>Ngày2</td>
+                                      <td>Phân loại2</td>
+                                      <td>Khách hàng2</td>
+                                      <td>Nội dung2</td>
+                                      <td>Tiền thu2</td>
+                                      <td>Thêm2</td>
+                                      <td>
+                                        <button class="bct-btn-xoa">Xóa</button>
+                                        <button class="bct-btn-sua">Sửa</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>Ngày3</td>
+                                      <td>Phân loại3</td>
+                                      <td>Khách hàng3</td>
+                                      <td>Nội dung3</td>
+                                      <td>Tiền thu3</td>
+                                      <td>Thêm3</td>
+                                      <td>
+                                        <button class="bct-btn-xoa">Xóa</button>
+                                        <button class="bct-btn-sua">Sửa</button>
+                                      </td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>Ngày4</td>
+                                      <td>Phân loại4</td>
+                                      <td>Khách hàng4</td>
+                                      <td>Nội dung4</td>
+                                      <td>Tiền thu4</td>
+                                      <td>Thêm4</td>
+                                      <td>
+                                        <button class="bct-btn-xoa">Xóa</button>
+                                        <button class="bct-btn-sua">Sửa</button>
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+
+                          <div class="bct-truocsau">
+                            
+                              <button class="bct-btn-truocsau">Trước</button>
+                              <button class="bct-btn-truocsau">Sau</button>
+                          
+                          </div>
+
+                          <div class="bct-tongtienthu">
+                              <h2>TỔNG TIỀN THU : </h2>
+                          </div>
+
+                            
+                       </div>
+                    </div>
+                </div>
+
+                    
+
+                <div id="BCC" class="BaoCaoChi" style="display: none;">
+                  <div class="bcc-all">
+                    <div class="bcc-tieude">  
+                        <h4>BÁO CÁO CHI</h4>
+                    </div>
+
+                    <div class="bcc-content">      
+                        <div class="bcc-form1">
+                            <form>
+                                <input type="date" class="bcc-timepicker1">
+                                <input type="date" class="bcc-timepicker2">
+                                <button class="bcc-btn-timkiem">Tìm kiếm</button>                    
+                            </form>
+                        </div>
+
+                       <div class="bcc-form2">
+                          <form>
+                              <span class="bcc-span-ketqua">
+                                <label>Hiện</label>
+                                <input type="number" class="bcc-resultshower">
+                                <label>kết quả</label>
+                              </span>
+                              
+                              <span class="bcc-span-timkiem">
+                                <label>Tìm kiếm</label>
+                                <input type="text" class="bcc-txt-timkiem" >   
+                              </span>                                 
+                          </form>
+                          
+                       </div>
+
+                        <div class="table"> 
+                            <table border="1" class="bcc-table">
+                                <tr>
+                                    <td class="bcc-table-tittle">Ngày</td>
+                                    <td class="bcc-table-tittle">Phân loại</td>
+                                    <td class="bcc-table-tittle">Khách hàng</td>
+                                    <td class="bcc-table-tittle">Nội dung</td>
+                                    <td class="bcc-table-tittle">Tiền chi</td>
+                                    <td class="bcc-table-tittle">Thêm</td>
+                                    <td class="bcc-table-tittle">Tác vụ</td>
+                                </tr>
+
+                                <tr cl>
+                                    <td>Ngày1</td>
+                                    <td>Phân loại1</td>
+                                    <td>Khách hàng1</td>
+                                    <td>Nội dung1</td>
+                                    <td>Tiền chi1</td>
+                                    <td>Thêm1</td>
+                                    <td>
+                                      <button class="bcc-btn-xoa">Xóa</button>
+                                      <button class="bcc-btn-sua">Sửa</button>
+                                    </td>
+                                    
+                                </tr>
+
+                                <tr>
+                                    <td>Ngày1</td>
+                                    <td>Phân loại1</td>
+                                    <td>Khách hàng1</td>
+                                    <td>Nội dung1</td>
+                                    <td>Tiền chi1</td>
+                                    <td>Thêm1</td>
+                                    <td>
+                                      <button class="bcc-btn-xoa">Xóa</button>
+                                      <button class="bcc-btn-sua">Sửa</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Ngày2</td>
+                                    <td>Phân loại2</td>
+                                    <td>Khách hàng2</td>
+                                    <td>Nội dung2</td>
+                                    <td>Tiền chi2</td>
+                                    <td>Thêm2</td>
+                                    <td>
+                                      <button class="bcc-btn-xoa">Xóa</button>
+                                      <button class="bcc-btn-sua">Sửa</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Ngày3</td>
+                                    <td>Phân loại3</td>
+                                    <td>Khách hàng3</td>
+                                    <td>Nội dung3</td>
+                                    <td>Tiền chi3</td>
+                                    <td>Thêm3</td>
+                                    <td>
+                                      <button class="bcc-btn-xoa">Xóa</button>
+                                      <button class="bcc-btn-sua">Sửa</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Ngày4</td>
+                                    <td>Phân loại4</td>
+                                    <td>Khách hàng4</td>
+                                    <td>Nội dung4</td>
+                                    <td>Tiền chi4</td>
+                                    <td>Thêm4</td>
+                                    <td>
+                                      <button class="bcc-btn-xoa">Xóa</button>
+                                      <button class="bcc-btn-sua">Sửa</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="bcc-truocsau">
+                          
+                            <button class="bcc-btn-truocsau">Trước</button>
+                            <button class="bcc-btn-truocsau">Sau</button>
+                        
+                        </div>
+
+                        <div class="bcc-tongtienthu">
+                            <h2>TỔNG TIỀN CHI : </h2>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>      
+               
+
+                <div id="TK" class="TonKho" style="display: none;">
+                  <table border="1" style="border-collapse: collapse; width: 1200px;">
+                    <tr style="background-color: rgb(45, 47, 50);color: aliceblue;">
+                      <td>
+                  <p>BÁO CÁO TỒN KHO</p>
+                </td>
+                </tr>
+                <tr>
+                  <td>
+                    <form action="showentries" style="font-size: 15px; position: relative; bottom: 20px;"></form>
+                            <label for="showentries" style="font-size: 15px;">Show entries</label>
+                            <input type="number" style="position: relative; bottom: 0px;width: 30px;font-size: 15px;"></input>
+                            <form class="formtimkiemnam" style="position: relative;left: 880px;bottom: 20px;">
+                              <label  for="search" style="font-size: 15px;">Search  </label>
+                              <input class="formsearch2"  type="text" id="search" name="serchinh"  >
+                            </form>
+                    <table border="1" style="border-collapse: collapse; width: 1100px;position: relative;left: 40px;">
+                      <tr>
+                        <strong>
+                          <th>Mã hàng</th>
+                          <th>Tên hàng</th>
+                          <th>SL nhập</th>
+                          <th>SL xuất</th>
+                          <th>Tồn kho</th>
+                          <th>Đơn giá TB</th>
+                          <th>Gía trị</th>
+                        </strong>
+                      </tr>
+  
+                      <tr>
+                        <td>19692</td>
+                        <td>Cua biển xay</td>
+                        <td>3.00</td>
+                        <td>9.00</td>
+                        <td>-6</td>
+                        <td>170.000</td>
+                        <td>-1.020.000</td>
+                      </tr>
+                      <tr>
+                        <td>69412</td>
+                        <td>Nộm đu đủ hộp</td>
+                        <td>35.00</td>
+                        <td>5.00</td>
+                        <td>30</td>
+                        <td>65.714</td>
+                        <td>1.971.429</td>
+                      </tr>
+                      <tr>
+                        <td>92026</td>
+                        <td>Tên hàng 1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                    </table>
+                    <p>Showing 1 to 3 of 3 entries</p>
+                    <div style="position: relative;left: 1000px;bottom: 40px;">
+                    
+                    <div class="truocsau">
+                      <span style="display: flex;"><button class="previous">Previous</button><div style="background-color: aqua;width: 20px;">1</div> <button>Next</button></span>
+                  </div>
+                </div>
+                  <hr>
+                  <h4 style="position: relative;left: 700px; font-size: 30px;color: red;">GIÁ TRỊ TỒN KHO = 951,429</h4>
+                  </td>
+                </tr>
+                 
+              </table>
+              </div>
+
+
+              <div id="LN" class="LoiNhuan" style="display: none;">
+                  <div class="ln-all">
+                      <div class="ln-tieude">
+                          <h4>LỢI NHUẬN THEO THÁNG</h4>
+                      </div>
+
+                      <div class="ln-content">
+                          <div class="ln-form1">
+                              <span class="ln-span-timkiem">
+                                  <input type="text" class="ln-timkiem" placeholder="Nhập năm cần xem...">
+                              </span>
+
+                              <span class="ln-span-timkiem">
+                                  <i id="ln-kinhlup" class="fa-duotone fa-magnifying-glass"  ></i>
+                              </span>
+                          </div>
+
+                          <div>
+                              <table class="ln-table" border="1">
+                                  <tr>
+                                      <td class="ptc-table-tittle">Tháng</td>
+                                      <td class="ptc-table-tittle">Tổng tiền xuất</td>
+                                      <td class="ptc-table-tittle">Tổng tiền vốn</td>
+                                      <td class="ptc-table-tittle">Tổng khuyến mãi</td>
+                                      <td class="ptc-table-tittle">Tổng thu nhập</td>
+                                      <td class="ptc-table-tittle">Lợi nhuận</td>
+                                  </tr>
+                                
+                                  <tr class="ln-dongsole">
+                                      <td>1</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr>
+                                      <td>2</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr class="ln-dongsole">
+                                      <td>3</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr>
+                                      <td>4</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr class="ln-dongsole">
+                                      <td>5</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr>
+                                      <td>6</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr class="ln-dongsole">
+                                      <td>7</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr>
+                                      <td>8</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr class="ln-dongsole">
+                                      <td>9</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr>
+                                      <td>10</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr class="ln-dongsole">
+                                      <td>11</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+
+                                  <tr>
+                                      <td>12</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>                                
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="CN" class="CongNo" style="display: none;">
+                  <div class="cn-all">
+                      <div class="cn-tieude">
+                          <h4>CÔNG NỢ KHÁCH HÀNG</h4>
+                      </div>
+
+                      <div class="cn-content">
+                          <div class="cn-form1">
+                              <form>
+                                <span class="cn-span-ketqua">
+                                  <label>Hiện</label>
+                                  <input type="number" class="cn-resultshower">
+                                  <label>kết quả</label>
+                                </span>
+                                
+                                <span class="cn-span-timkiem">
+                                  <label>Tìm kiếm</label>
+                                  <input type="text" class="cn-txt-timkiem" >   
+                                </span>                                 
+                              </form>
+                          </div>
+
+                          <div class="table">
+                              <table class="cn-table" border="1">
+                                  <tr>
+                                      <td class="cn-table-tittle">tên khách hàng</td>
+                                      <td class="cn-table-tittle">số điện thoại</td>
+                                      <td class="cn-table-tittle">địa chỉ</td>
+                                      <td class="cn-table-tittle">tiền thu</td>
+                                      <td class="cn-table-tittle">km ship px</td>
+                                      <td class="cn-table-tittle">tiền hàng xuất</td>
+                                      <td class="cn-table-tittle-red">công nợ kh</td>
+                                      <td class="cn-table-tittle">tiền chi</td>
+                                      <td class="cn-table-tittle">km ship pn</td>
+                                      <td class="cn-table-tittle">tiền hàng nhập</td>
+                                      <td class="cn-table-tittle-red">công nợ ncc</td>
+                                      <td class="cn-table-tittle">còn lại</td>
+                                  </tr>
+                                      
+                                  <tr>
+                                      <td>tên khách hàng1</td>
+                                      <td>0000000xxx</td>
+                                      <td>123</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>tên khách hàng2</td>
+                                      <td>0000000xxx</td>
+                                      <td>123</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>tên khách hàng3</td>
+                                      <td>0000000xxx</td>
+                                      <td>123</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>tên khách hàng4</td>
+                                      <td>0000000xxx</td>
+                                      <td>123</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>tên khách hàng5</td>
+                                      <td>0000000xxx</td>
+                                      <td>123</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td class="cn-table-tittle-red">0</td>
+                                      <td>0</td>
+                                  </tr>
+                              </table>
+                          </div>
+
+                          <div class="cn-form2">
+                              <div class="cn-truocsau">
+                                  <button class="cn-btn-truocsau">Trước</button>
+                                  <button class="cn-btn-truocsau">Sau</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </body>
+
+
+<script>
+       
+      var currentDiv = "Home";
+
+      function ShowNewDiv(divId) {
+        var currentDivElem = document.getElementById(currentDiv);
+        currentDivElem.style.display = "none";    
+        
+        currentDiv = divId;
+        
+        var nextDivElem = document.getElementById(currentDiv);
+        nextDivElem.style.display = "block";
+      }
+
+
+        $('.pn-btn').click(function(){
+            $('nav ul.pn-show').toggleClass("show1");
+            $('nav ul.first').toggleClass("rotate");
+        });
+
+        $('.px-btn').click(function(){
+            $('nav ul.px-show').toggleClass("show2");
+            $('nav ul.second').toggleClass("rotate");   
+        });
+
+        $('.tc-btn').click(function(){
+            $('nav ul.tc-show').toggleClass("show3");
+            $('nav ul.third').toggleClass("rotate");
+        });
+
+        $('.th-btn').click(function(){
+            $('nav ul.th-show').toggleClass("show4");
+                    $('nav ul.fourth').toggleClass("rotate");
+        });
+
+
+    // Lấy ngày hiện tại
+    var today = new Date();
+
+    // Tạo chuỗi ngày tháng
+    var date = today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear();
+
+    // Tạo chuỗi giờ phút
+    var time = today.getHours() + ':' + today.getMinutes();
+
+    // Hiển thị ngày và giờ trong div
+    document.getElementById('current-date').innerHTML = 'Ngày ' + date + ' lúc ' + time;
+
+</script>
+  
+  
+</body>
+</html>

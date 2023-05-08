@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/39e59fe2dc.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-eGZ1ksmxkzTkEowv/v8Z3WxjPpN+7fJSJ1dt8r7VZxpMk2M+Vr+Jg8xBolVtKy5HtQaer5g5A5S5S4+DZz4zOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+    <div class="Tonghopdangnhap" style="position: relative; left: 50px; bottom: 20px;">
+        <div class="Tieudedangnhap">
+            <h1> <b>FAHAHA MANAGER STATIONERY</b></h1>
+        </div>
+<div style="position: relative; bottom: 80px;">
+        <div>
+             <h1 class="dangnhap">ĐĂNG NHẬP</h1>
+        </div>
+        <div class="hcn">
+            
+        </div>
+        <div class="formdangnhap">
+            <form onsubmit="return validate()" action="index.php" method="POST">
+                
+                    <label  for="username"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp; </label>
+                    <input class="form-input1"  type="text" id="username" name="username" placeholder="&nbsp; &nbsp; Nhập tài khoản" required> <br> <br>
+               
+                    <label for="password"><i class="fa-sharp fa-solid fa-key"></i> &nbsp;&nbsp;&nbsp;</label>
+                    <input class="form-input2" type="password" id="password" name="password" placeholder="&nbsp; &nbsp;Nhập mật khẩu" required> 
+                   
+                    
+                    <br> <br>
+                
+                 <button class="form-dnbtn" type="submit">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="ghinhomk-quenmk">
+            <span style="display: inline-block;"> <label >
+                <input style="font-size: 20px;" type="checkbox" name="my-checkbox">
+                <span style="display: inline-block;"> <p class="gnmk-qmk"><b>Ghi nhớ mật khẩu</b></p> </span>
+              </label> </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="display: inline-block;"> <p class="gnmk-qmk"><b>Quên mật khẩu ?</b></p></span>
+        </div>
+        
+        <div class="hoac">
+            <h2>HOẶC</h2>
+           
+            <div class="dangnhapfb-gg">
+                <button class="buttonfb" ><i class="fa-brands fa-facebook"></i><b> Facebook</b></button>
+                <button class="buttonig" ><i class="fa-brands fa-instagram"></i><b> Instagram</b></button>
+            </div>
+        </div>
+        <div class="đkytk">
+            <span style="display: inline-block;"><b>Bạn chưa có tài khoản ?</b></span>
+            &nbsp;&nbsp;&nbsp;
+            <span style="display: inline-block;"> <b> Đăng ký ngay</b></span>
+         </div>
+    </div>
+</div>
+
+    <script>
+       
+        function validate() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			if (username == "" || password == "") {
+				alert("Vui lòng nhập tên đăng nhập và mật khẩu.");
+				return false;
+			} else {
+				return true;
+			}
+		}
+    </script>
+
+</body>
+</html>
