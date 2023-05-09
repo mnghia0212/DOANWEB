@@ -89,21 +89,21 @@
                     Tài khoản
                 </label>
 
-                <input type="text" class="modal-input" placeholder="Nhập tên tài khoản của bạn ">
+                <input type="text" id="username1" class="modal-input" placeholder="Nhập tên tài khoản của bạn ">
 
                 <label for="" class="modal-label">
                     <i class="fa-solid fa-key"></i>
                     Mật khẩu
                 </label>
 
-                <input type="text" class="modal-input" placeholder="Nhập tên mật khẩu của bạn">
+                <input type="password" id="password1" class="modal-input" placeholder="Nhập tên mật khẩu của bạn">
 
                 <label for="" class="modal-label">
                     <i class="fa-solid fa-envelope"></i>
                     Email
                 </label>
 
-                <input type="text" class="modal-input" placeholder="Nhập email của bạn">
+                <input type="text" id="email1" class="modal-input" placeholder="Nhập email của bạn">
 
                 <button id="btn-taotk">TẠO <i class="fa-solid fa-check"></i></button>
 
@@ -147,6 +147,27 @@
 
         // modal.addEventListener('click' , hideRegister)
         
+
+        function validate() {
+			var username1 = document.getElementById("username1").value;
+			var password1 = document.getElementById("password1").value;
+            var email1 = document.getElementById("email1").value
+			if (username1 == "" || password1 == "" || email1 == "") {
+				alert("Vui lòng nhập tên đăng nhập, mật khẩu và email");
+				return false;
+			} else {
+				return true;
+			}
+		}
+
+        var button = document.getElementById("btn-taotk");
+        button.addEventListener("click", function() {
+            alert("Tạo tài khoản thành công !!!");
+        });
+
+
+        
+
     </script>
 
 </body>
