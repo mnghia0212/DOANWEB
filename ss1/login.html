@@ -21,6 +21,7 @@
 
 </head>
 <body>
+    
     <div class="Tonghopdangnhap" style="position: relative; left: 50px; bottom: 20px;">
         <div class="Tieudedangnhap">
             <h1> <b>FAHAHA MANAGER STATIONERY</b></h1>
@@ -33,7 +34,7 @@
             
         </div>
         <div class="formdangnhap">
-            <form onsubmit="return validate()" action="index.php" method="POST">
+            <form onsubmit="return validate()" action="index.html" >
                 
                     <label  for="username"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp; </label>
                     <input class="form-input1"  type="text" id="username" name="username" placeholder="&nbsp; &nbsp; Nhập tài khoản" required> <br> <br>
@@ -67,14 +68,14 @@
         <div class="đkytk">
             <span style="display: inline-block;"><b>Bạn chưa có tài khoản ?</b></span>
             &nbsp;&nbsp;&nbsp;
-            <button class="btn-dangky"> Đăng ký ngay</button>
+            <button class="btn-dangky js-btn-taotk" id="dky"> Đăng ký ngay</button>
          </div>
     </div>
 </div>
 
-    <div class="modal">
+    <div class="modal" id="fdk">
         <div class="modal-container">
-            <div class="modal-close">
+            <div class="modal-close js-modal-close" id="close">
                 <i class="fa-solid fa-xmark"></i>
             </div>
 
@@ -122,6 +123,30 @@
 				return true;
 			}
 		}
+
+    </script>
+    <script>
+       
+
+        const taotkBtns = document.querySelector('.js-btn-taotk')
+        const modal = document.querySelector('.modal')
+        const modalClose = document.querySelector('.js-modal-close')
+
+        function showRegister(){
+            modal.classList.add('open')
+
+        }
+        function hideRegister(){
+            modal.classList.remove('open')
+
+        }
+
+        taotkBtns.addEventListener('click',showRegister)
+
+        modalClose.addEventListener('click' , hideRegister)
+
+        // modal.addEventListener('click' , hideRegister)
+        
     </script>
 
 </body>
